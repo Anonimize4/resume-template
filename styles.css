@@ -1,0 +1,582 @@
+/* =============================================
+   Cybersecurity Resume Template - Styles
+   ============================================= */
+
+/* CSS Variables */
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-tertiary: #1a2234;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --accent-cyan: #06b6d4;
+    --accent-green: #10b981;
+    --accent-orange: #f59e0b;
+    --accent-red: #ef4444;
+    --border-color: #2d3748;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 11pt;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Resume Container */
+.resume-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--bg-primary);
+}
+
+/* Header Section */
+.header {
+    border-bottom: 2px solid var(--accent-cyan);
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.name {
+    font-family: var(--font-mono);
+    font-size: 32pt;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 14pt;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10pt;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.icon {
+    font-size: 10pt;
+}
+
+/* Security Clearance Section */
+.clearance-section {
+    margin-bottom: 24px;
+}
+
+.clearance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+    border: 1px solid var(--accent-green);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 10pt;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.clearance-icon {
+    font-size: 14pt;
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 28px;
+}
+
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
+    color: var(--accent-green);
+}
+
+/* Summary */
+.summary-text {
+    color: var(--text-secondary);
+    font-size: 10.5pt;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.skill-category {
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--accent-cyan);
+}
+
+.skill-category-title {
+    font-family: var(--font-mono);
+    font-size: 10pt;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-tag {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    background: var(--bg-tertiary);
+    color: var(--accent-cyan);
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+/* Certifications */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.certification {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary);
+    padding: 10px 14px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-green);
+}
+
+.cert-icon {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.cert-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-name {
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--text-primary);
+}
+
+.cert-issuer {
+    font-size: 9pt;
+    color: var(--text-muted);
+}
+
+.cert-date {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+/* Work Experience */
+.experience-item {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-orange);
+}
+
+.experience-item:last-child {
+    margin-bottom: 0;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.exp-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-title {
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.exp-company {
+    font-size: 10pt;
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+.exp-date {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--text-muted);
+    background: var(--bg-tertiary);
+    padding: 4px 10px;
+    border-radius: 3px;
+}
+
+.exp-description {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-description li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 10pt;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.exp-description li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 14pt;
+    line-height: 1.3;
+}
+
+.exp-description li:last-child {
+    margin-bottom: 0;
+}
+
+/* Education */
+.education-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.education-item {
+    background: var(--bg-secondary);
+    padding: 14px 18px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-cyan);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.edu-degree {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.edu-date {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--text-muted);
+}
+
+.edu-school {
+    font-size: 10pt;
+    color: var(--accent-cyan);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.edu-details {
+    font-size: 9pt;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.project-item {
+    background: var(--bg-secondary);
+    padding: 14px 18px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-red);
+}
+
+.project-title {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.project-description {
+    font-size: 10pt;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    background: var(--bg-tertiary);
+    color: var(--accent-orange);
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+}
+
+/* Languages */
+.languages-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.language-name {
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--text-primary);
+}
+
+.language-level {
+    font-family: var(--font-mono);
+    font-size: 9pt;
+    color: var(--accent-cyan);
+}
+
+/* =============================================
+   Print Styles - For PDF Conversion
+   ============================================= */
+@media print {
+    body {
+        background: white !important;
+        color: #1a1a1a !important;
+        font-size: 10pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .resume-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    .name {
+        color: #1a1a1a !important;
+        font-size: 24pt;
+    }
+
+    .title {
+        color: #0066cc !important;
+    }
+
+    .section-title {
+        color: #0066cc !important;
+        border-bottom-color: #cccccc !important;
+    }
+
+    .title-icon {
+        color: #0066cc !important;
+    }
+
+    .skill-category,
+    .certification,
+    .experience-item,
+    .education-item,
+    .project-item,
+    .language-item {
+        background: #f5f5f5 !important;
+        border-left-color: #0066cc !important;
+    }
+
+    .skill-category-title,
+    .exp-title,
+    .edu-degree,
+    .project-title,
+    .language-name {
+        color: #1a1a1a !important;
+    }
+
+    .skill-tag,
+    .tech-tag {
+        background: #e5e5e5 !important;
+        color: #0066cc !important;
+        border-color: #cccccc !important;
+    }
+
+    .cert-name,
+    .exp-company,
+    .edu-school {
+        color: #1a1a1a !important;
+    }
+
+    .cert-date,
+    .exp-date,
+    .edu-date,
+    .language-level {
+        color: #666666 !important;
+        background: #e5e5e5 !important;
+    }
+
+    .summary-text,
+    .exp-description li,
+    .project-description {
+        color: #333333 !important;
+    }
+
+    .contact-item,
+    .cert-issuer,
+    .edu-details {
+        color: #666666 !important;
+    }
+
+    .clearance-badge {
+        background: #e5e5e5 !important;
+        color: #006600 !important;
+        border-color: #006600 !important;
+    }
+
+    .cert-icon {
+        color: #006600 !important;
+    }
+
+    .exp-description li::before {
+        color: #006600 !important;
+    }
+
+    .project-item {
+        border-left-color: #cc0000 !important;
+    }
+
+    .tech-tag {
+        color: #cc6600 !important;
+    }
+
+    /* Ensure page breaks work properly */
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .experience-item,
+    .project-item,
+    .education-item {
+        page-break-inside: avoid;
+    }
+}
+
+/* =============================================
+   Responsive Styles
+   ============================================= */
+@media screen and (max-width: 768px) {
+    .resume-container {
+        padding: 20px;
+    }
+
+    .name {
+        font-size: 20pt;
+        letter-spacing: 2px;
+    }
+
+    .title {
+        font-size: 11pt;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .languages-grid {
+        flex-direction: column;
+    }
+}
