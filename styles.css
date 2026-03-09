@@ -40,13 +40,12 @@ body {
 
 /* Resume Container */
 .resume-container {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
+    max-width: 850px;
+    margin: 30px auto;
     padding: 0;
     background: var(--bg-secondary);
-    box-shadow: none;
-    border-radius: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     overflow: hidden;
 }
@@ -863,25 +862,41 @@ body {
         size: auto;
     }
     
-    body {
-        background: white !important;
-        color: #1e293b !important;
-        font-size: 9.5pt;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+    html, body {
+        width: 100% !important;
+        height: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+        background: white !important;
+        color: #1e293b !important;
+        font-size: 9.5pt !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        overflow: hidden !important;
     }
 
     .resume-container {
         max-width: 100% !important;
         width: 100% !important;
+        height: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         background: white !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         display: flex !important;
+        overflow: hidden !important;
+    }
+    
+    /* Hide any extra blank pages */
+    .sidebar, .main-content {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Remove all rounded corners and borders that might show */
+    * {
+        border-radius: 0 !important;
     }
 
     /* Preserve sidebar colors */
