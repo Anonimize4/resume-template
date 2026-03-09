@@ -71,7 +71,7 @@ body {
 
 .main-content .section-title {
     font-family: var(--font-sans);
-    font-size: 12pt;
+    font-size: 10pt;
     font-weight: 700;
     color: #1a365d;
     letter-spacing: 0.5px;
@@ -86,7 +86,7 @@ body {
 
 .main-content .title-icon {
     color: #0f62fe;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 /* Main Content Section Items */
@@ -378,6 +378,25 @@ body {
     gap: 8px;
 }
 
+.sidebar .languages-plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .languages-plain li {
+    font-size: 9pt;
+    color: #c5d6e6;
+    padding: 2px 0;
+    margin-bottom: 4px;
+}
+
+.sidebar .languages-plain li::before {
+    content: "•";
+    color: #4a90d9;
+    margin-right: 6px;
+}
+
 .sidebar .language-item {
     background: rgba(255,255,255,0.05);
     padding: 8px 12px;
@@ -392,9 +411,37 @@ body {
     font-weight: 500;
 }
 
+/* Technical Skills List in Main Content */
+.skill-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-row {
+    display: flex;
+    gap: 15px;
+    padding: 8px 12px;
+    background: #f8fafc;
+    border-radius: 4px;
+    border-left: 3px solid #0f62fe;
+}
+
+.skill-list-label {
+    font-weight: 600;
+    font-size: 9.5pt;
+    color: #1a365d;
+    min-width: 150px;
+}
+
+.skill-list-value {
+    font-size: 9.5pt;
+    color: #475569;
+}
+
 .section-title {
     font-family: var(--font-sans);
-    font-size: 11.5pt;
+    font-size: 10pt;
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: 0.8px;
@@ -409,7 +456,7 @@ body {
 
 .title-icon {
     color: var(--accent-primary);
-    font-size: 14pt; /* Make icon a bit bigger */
+    font-size: 12pt; /* Make icon a bit bigger */
 }
 
 /* Summary */
@@ -812,8 +859,8 @@ body {
 @media print {
     body {
         background: white !important;
-        color: #1e293b !important; /* Use text-primary equivalent */
-        font-size: 9.5pt; /* Smaller for print */
+        color: #1e293b !important;
+        font-size: 9.5pt;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -827,106 +874,158 @@ body {
         border-radius: 0 !important;
     }
 
+    /* Preserve sidebar colors */
+    .sidebar {
+        background: linear-gradient(180deg, #1a365d 0%, #0f2540 100%) !important;
+        color: #ffffff !important;
+    }
+
     .name {
-        color: #1e293b !important;
-        font-size: 22pt !important;
+        color: #ffffff !important;
+        font-size: 18pt !important;
         letter-spacing: 1px !important;
     }
 
     .title {
-        color: #0f62fe !important; /* Accent primary */
-        font-size: 11pt !important;
+        color: #a8c5e2 !important;
+        font-size: 10pt !important;
         letter-spacing: 0.5px !important;
     }
 
+    .contact-item {
+        color: #c5d6e6 !important;
+    }
+
     .section-title {
-        color: #1e293b !important;
-        border-bottom-color: #cbd5e1 !important; /* Border color */
-        font-size: 10.5pt !important;
+        color: #1a365d !important;
+        border-bottom-color: #1a365d !important;
+        font-size: 9pt !important;
         letter-spacing: 0.5px !important;
     }
 
     .title-icon {
-        color: #0f62fe !important; /* Accent primary */
+        color: #0f62fe !important;
     }
 
     .profile-photo {
-        border-color: #0f62fe !important;
+        border-color: #4a90d9 !important;
         box-shadow: none !important;
     }
 
-    .clearance-badge {
-        background: #f0f4f8 !important; /* Light background */
-        color: #28a745 !important; /* Accent success */
-        border-color: #28a745 !important;
+    /* Preserve sidebar section styling */
+    .sidebar .section-title {
+        color: #ffffff !important;
+        border-bottom-color: rgba(255,255,255,0.2) !important;
     }
 
-    .skill-category,
-    .certification,
-    .experience-item,
-    .education-item,
-    .project-item,
-    .language-item {
-        background: #f8fafc !important; /* Use a very light background for sections */
-        border-left-color: #0f62fe !important; /* Accent primary for borders */
+    .sidebar .title-icon {
+        color: #4a90d9 !important;
+    }
+
+    .sidebar .skill-category,
+    .sidebar .education-item,
+    .sidebar .language-item {
+        background: rgba(255,255,255,0.05) !important;
+        border-left-color: #4a90d9 !important;
         box-shadow: none !important;
     }
 
-    .skill-category-title,
-    .exp-title,
-    .edu-degree,
-    .project-title,
-    .language-name {
-        color: #1e293b !important; /* Text primary */
+    .sidebar .skill-label,
+    .sidebar .edu-degree,
+    .sidebar .edu-school,
+    .sidebar .language-name {
+        color: #4a90d9 !important;
     }
 
-    .skill-tag,
-    .tech-tag {
-        background: #e2e8f0 !important; /* Bg tertiary */
-        color: #0f62fe !important; /* Accent primary */
-        border-color: #cbd5e1 !important; /* Border color */
+    .sidebar .skill-tag {
+        color: #c5d6e6 !important;
     }
 
-    .cert-name,
-    .exp-company,
-    .edu-school {
-        color: #1e293b !important; /* Text primary */
+    .sidebar .skill-tag::before {
+        color: #4a90d9 !important;
     }
 
-    .cert-date,
-    .exp-date,
-    .edu-date,
-    .language-level {
-        color: #475569 !important; /* Text secondary */
-        background: #e2e8f0 !important; /* Bg tertiary */
+    .sidebar .certification {
+        background: rgba(255,255,255,0.05) !important;
+        border-left-color: #28a745 !important;
+        box-shadow: none !important;
     }
 
-    .summary-text,
-    .exp-description li,
-    .project-description {
-        color: #475569 !important; /* Text secondary */
+    .sidebar .cert-icon {
+        color: #28a745 !important;
     }
 
-    .contact-item,
-    .cert-issuer,
-    .edu-details {
-        color: #64748b !important; /* Text muted */
+    .sidebar .cert-name {
+        color: #ffffff !important;
     }
 
-    .cert-icon {
-        color: #28a745 !important; /* Accent success */
+    .sidebar .cert-issuer,
+    .sidebar .cert-date,
+    .sidebar .edu-date,
+    .sidebar .edu-details {
+        color: #a8c5e2 !important;
+    }
+
+    /* Preserve experience item colors */
+    .experience-item {
+        background: #f8fafc !important;
+        border-left-color: #0f62fe !important;
+        box-shadow: none !important;
+    }
+
+    .exp-title {
+        color: #1e293b !important;
+    }
+
+    .exp-company {
+        color: #007bff !important;
+    }
+
+    .exp-date {
+        color: #64748b !important;
+        background: #e2e8f0 !important;
+    }
+
+    .exp-description li {
+        color: #475569 !important;
     }
 
     .exp-description li::before {
-        color: #0f62fe !important; /* Accent primary */
+        color: #0f62fe !important;
     }
 
-    .project-item {
-        border-left-color: #dc3545 !important; /* Accent danger */
+    /* Preserve education colors */
+    .education-item {
+        background: #f8fafc !important;
+        border-left-color: #007bff !important;
+        box-shadow: none !important;
     }
 
-    .tech-tag {
-        color: #ffc107 !important; /* Accent warning */
+    .edu-degree {
+        color: #1e293b !important;
+    }
+
+    .edu-school {
+        color: #0f62fe !important;
+    }
+
+    .edu-date {
+        color: #64748b !important;
+    }
+
+    /* Preserve summary text */
+    .summary-text {
+        color: #475569 !important;
+    }
+
+    /* Preserve certification section */
+    .certifications-section .exp-company {
+        color: #007bff !important;
+    }
+
+    .certifications-section .exp-date {
+        color: #64748b !important;
+        background: transparent !important;
     }
 
     /* Ensure page breaks work properly */
@@ -940,33 +1039,9 @@ body {
         page-break-inside: avoid;
     }
 
-    .header {
-        background: #f0f4f8 !important;
-        padding: 25px 40px !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    .name,
-    .title,
-    .contact-item {
-        color: #1e293b !important;
-    }
-
+    /* Remove footer for print */
     .footer {
-        background: #f0f4f8 !important;
-        color: #1e293b !important;
-        padding: 20px 40px !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
-    }
-
-    .footer-text {
-        color: #1e293b !important;
-    }
-
-    .footer-links span {
-        color: #475569 !important;
+        display: none !important;
     }
 }
 
@@ -1012,7 +1087,7 @@ body {
     }
 
     .section-title {
-        font-size: 10.5pt;
+        font-size: 9pt;
     }
 
     .skills-grid {
