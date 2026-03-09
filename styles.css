@@ -40,12 +40,13 @@ body {
 
 /* Resume Container */
 .resume-container {
-    max-width: 850px;
-    margin: 30px auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
     padding: 0;
     background: var(--bg-secondary);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
+    border-radius: 0;
     display: flex;
     overflow: hidden;
 }
@@ -857,21 +858,30 @@ body {
    Print Styles - For PDF Conversion
    ============================================= */
 @media print {
+    @page {
+        margin: 0;
+        size: auto;
+    }
+    
     body {
         background: white !important;
         color: #1e293b !important;
         font-size: 9.5pt;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .resume-container {
         max-width: 100% !important;
+        width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
         background: white !important;
         box-shadow: none !important;
         border-radius: 0 !important;
+        display: flex !important;
     }
 
     /* Preserve sidebar colors */
